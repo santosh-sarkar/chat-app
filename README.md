@@ -19,7 +19,7 @@ A full-stack chat application built with React + Vite on the frontend and Node.j
 ## Project Structure
 
 ```bash
-MERN-TASK/
+chat-app/
 ├── backend/
 │   ├── src/
 │   ├── .env.example
@@ -46,8 +46,8 @@ Before running the app, make sure you have the following installed:
 ## 1) Clone and Install
 
 ```bash
-git clone https://github.com/santosh-sarkar/MERN-TASK.git
-cd MERN-TASK
+git clone https://github.com/santosh-sarkar/chat-app.git
+cd chat-app
 
 cd backend
 npm install
