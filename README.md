@@ -46,7 +46,7 @@ Before running the app, make sure you have the following installed:
 ## 1) Clone and Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/santosh-sarkar/MERN-TASK.git
 cd MERN-TASK
 
 cd backend
