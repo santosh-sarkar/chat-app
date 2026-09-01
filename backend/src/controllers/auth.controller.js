@@ -22,6 +22,14 @@ const register = async (req, res) => {
       });
     }
 
+    const isadminExists = await userModel.findOne({ role: "admin" });
+    if (role === "admin" && isadminExists) {
+      return res.status(400).json({
+        success: false,
+        message: "Admin user already exists!",
+      });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await userModel.create({
