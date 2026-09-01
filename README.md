@@ -25,6 +25,7 @@ A full-stack chat application built with React + Vite on the frontend and Node.j
 | POST | `/api/auth/register` | Register a new user |
 | POST | `/api/auth/login` | Login user |
 | POST | `/api/auth/logout` | Logout user |
+| GET | `/api/auth/me` | Get current authenticated user |
 
 ### Users
 
@@ -40,35 +41,15 @@ A full-stack chat application built with React + Vite on the frontend and Node.j
 | Method | Endpoint | Description |
 |---|---|---|
 | GET | `/api/messages` | Get chat history |
-| POST | `/api/messages` | Create a message |
 | GET | `/api/messages/stats` | Get total users and messages |
 
-## API Endpoints
+## Socket.IO Events
 
-### Authentication
-
-| Method | Endpoint | Description |
+| Event | Direction | Description |
 |---|---|---|
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Login user |
-| POST | `/api/auth/logout` | Logout user |
-
-### Users
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/users` | Get all users |
-| GET | `/api/users/:id` | Get user by ID |
-| PUT | `/api/users/:id` | Update user |
-| DELETE | `/api/users/:id` | Delete user |
-
-### Messages
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/messages` | Get chat history |
-| POST | `/api/messages` | Create a message |
-| GET | `/api/messages/stats` | Get total users and messages |
+| `send_message` | Client → Server | Send a new message |
+| `message` | Server → Client | Receive a new message |
+| `user_join` | Server → Client | Notify users when someone joins |
 
 ## Project Structure
 
