@@ -16,6 +16,60 @@ A full-stack chat application built with React + Vite on the frontend and Node.j
 - Backend: Node.js, Express, MongoDB, Socket.IO
 - Authentication: JWT + cookies
 
+## API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login user |
+| POST | `/api/auth/logout` | Logout user |
+
+### Users
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/users` | Get all users |
+| GET | `/api/users/:id` | Get user by ID |
+| PUT | `/api/users/:id` | Update user |
+| DELETE | `/api/users/:id` | Delete user |
+
+### Messages
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/messages` | Get chat history |
+| POST | `/api/messages` | Create a message |
+| GET | `/api/messages/stats` | Get total users and messages |
+
+## API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login user |
+| POST | `/api/auth/logout` | Logout user |
+
+### Users
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/users` | Get all users |
+| GET | `/api/users/:id` | Get user by ID |
+| PUT | `/api/users/:id` | Update user |
+| DELETE | `/api/users/:id` | Delete user |
+
+### Messages
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/messages` | Get chat history |
+| POST | `/api/messages` | Create a message |
+| GET | `/api/messages/stats` | Get total users and messages |
+
 ## Project Structure
 
 ```bash
