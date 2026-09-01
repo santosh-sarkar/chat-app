@@ -16,7 +16,7 @@ const getMessageStats = async (req, res) => {
   try {
     const [totalMessages, totalUsers] = await Promise.all([
       messageModel.countDocuments(),
-      userModel.countDocuments(),
+      userModel.countDocuments({ role: { $ne: "admin" } }),
     ]);
 
     res.json({
