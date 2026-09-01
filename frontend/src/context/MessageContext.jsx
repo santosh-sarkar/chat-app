@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import socket from "../services/socket";
 import api from "../services/api";
+import { useAuth } from "./AuthContext";
+
 
 const MessageContext = createContext();
 
@@ -9,8 +11,10 @@ export const MessageProvider = ({ children }) => {
   const [totalMessages, setTotalMessages] = useState(0);
   const [totalUsers, setTotalUsers] = useState(0);
   const [systemMessage, setSystemMessage] = useState("");
+  const { user } = useAuth();
 
   useEffect(() => {
+    if(!user) return;
     const getMessages = async () => {
       try {
         const [messagesRes, statsRes] = await Promise.all([
@@ -27,7 +31,7 @@ export const MessageProvider = ({ children }) => {
     };
 
     getMessages();
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     const handleNewMessage = (message) => {
