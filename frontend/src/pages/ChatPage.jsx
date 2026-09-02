@@ -14,7 +14,7 @@ const ChatPage = () => {
     messages,
     totalMessages,
     totalUsers,
-    systemMessage,
+    joinMessage,
     sendMessage,
   } = useMessages();
   const [input, setInput] = useState("");
@@ -51,9 +51,9 @@ const ChatPage = () => {
       />
 
       <main className="flex min-h-0 flex-1 flex-col overflow-hidden bg-gray-900">
-        {systemMessage && (
+        {joinMessage && (
           <div className="border-b border-gray-700 bg-gray-800 px-4 py-2 text-center text-xs font-medium text-gray-200">
-            {systemMessage}
+            {joinMessage}
           </div>
         )}
 

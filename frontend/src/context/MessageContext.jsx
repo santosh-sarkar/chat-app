@@ -10,7 +10,7 @@ export const MessageProvider = ({ children }) => {
   const [messages, setMessages] = useState([]);
   const [totalMessages, setTotalMessages] = useState(0);
   const [totalUsers, setTotalUsers] = useState(0);
-  const [systemMessage, setSystemMessage] = useState("");
+  const [joinMessage, setJoinMessage] = useState("");
   const { user } = useAuth();
 
   useEffect(() => {
@@ -40,10 +40,10 @@ export const MessageProvider = ({ children }) => {
     };
 
     const handleUserJoin = (user) => {
-      setSystemMessage(`${user.name} joined the chat`);
+      setJoinMessage(`${user.name} joined the chat`);
 
       const timer = setTimeout(() => {
-        setSystemMessage("");
+        setJoinMessage("");
       }, 2500);
 
       return () => clearTimeout(timer);
@@ -73,7 +73,7 @@ export const MessageProvider = ({ children }) => {
         messages,
         totalMessages,
         totalUsers,
-        systemMessage,
+        joinMessage,
         sendMessage,
       }}
     >
